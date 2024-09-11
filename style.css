@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --primary-color: #af9b92;
+    --secondary-color: #5d5b6a;
+    --text-color: black;
+    --background-color: #dedede;
+    --card-bg: #8b7d78;
+    --transition-speed: 0.3s ease-in-out;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 60px;
+    text-shadow: 
+        -1px -1px 0 #252424,
+         1px -1px 0 #252424,
+        -1px  1px 0 #252424,
+         1px  1px 0 #252424;
+}
+
+/*-----------------------------------------------------------
+/* Navbar*/
+.navbar-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0px 20px;
+    box-shadow: 0px 4px 6px rgba(163, 64, 64, 0.1);
+    text-shadow: 
+        -0.5px -0.5px 0 #000,
+         0.5px -0.5px 0 #000,
+        -0.5px  0.5px 0 #000,
+         0.5px  0.5px 0 #000;
+}
+
+.navbar-brand h2 {
+    margin: 0;
+    color: white;
+    display: inline-block;
+}
+
+.navbar-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-links a.active {
+    color: yellow;
+}
+
+.navbar-links a:hover {
+    color: lightyellow;
+}
+
+/* -------------------------------------------
+
+/* Container */
+.container {
+    max-width: 100%;
+    margin-top: 70px;
+    padding: 15px;
+}
+
+/* Search Section */
+.search-container {
+    display: flex;
+    gap: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.search-container input {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--text-color);
+    width: 65%;
+    border-radius: 10px;
+}
+
+.search-container button {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 30%;
+    transition: background-color var(--transition-speed);
+}
+
+.search-container button:hover {
+    background-color: var(--secondary-color);
+}
+
+.search-container input:focus, .search-container button:focus, .unit-toggle button:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Unit Toggle Button */
+.unit-toggle {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.unit-toggle button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    min-width: 120px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-speed);
+}
+
+.unit-toggle button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Current Weather Section */
+.current-weather-container {
+    background-color: rgba(139, 125, 120, 0.5);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+    min-height: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.current-weather-container h2 {
+    font-size: 1.8rem;
+}
+
+.current-weather-container h4 {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.current-weather-container h1 {
+    font-size: 1.9rem;
+    margin-top: 20px;
+}
+
+.current-weather-container p {
+    margin-top: 5px;
+}
+
+/* Weather Icon */
+#result img {
+    width: 35px;
+    margin-top: 1rem;
+}
+
+/* Forecast Section */
+.forecast-section {
+    background-color: rgba(139, 125, 120, 0.5);
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 0px;
+    color: white;
+    border-radius: 10px;
+}
+
+#forecast-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast-card {
+    background-color: rgba(93, 91, 106, 0.4);
+    padding: 8px;
+    width: 28%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-card h4 {
+    font-size: 0.9rem;
+}
+
+.forecast-card p {
+    font-size: 0.8rem;
+}
+
+.forecast-card img {
+    width: 35px;
+    margin-bottom: 0.5rem;
+}
+
+/* Alerts Section */
+.alert-section {
+    background-color: rgba(139, 125, 120, 0.5);
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+.alert {
+    background-color: rgba(231, 76, 60, 0.7);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.alert h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.alert p {
+    margin-bottom: 5px;
+}
+
+/*-----History */
+.search2-container {
+    display: flex;
+    gap: 5%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.search2-container input {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--text-color);
+    width: 65%;
+    border-radius: 10px;
+}
+
+.search2-container button {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 30%;
+    transition: background-color var(--transition-speed);
+}
+
+.search2-container button:hover {
+    background-color: var(--secondary-color);
+}
+
+.search2-container input:focus, .search-container button:focus, .unit-toggle button:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.history-section {
+    margin-top: 20px;
+}
+
+/* -----Footer */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(52, 58, 64, 0.3);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    font-size: 14px; 
+}
+
+.fixed-footer p {
+    margin: 0;
+    line-height: 1.2; /* Optional: Adjust line height for better spacing */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #forecast-cards {
+        flex-direction: column;
+    }
+
+    .forecast-card {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
